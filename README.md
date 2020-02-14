@@ -2,6 +2,12 @@
 
 **Twitter** is an android app that allows a user to view their Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
+## Open-source libraries used
+- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
+- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
+
+## Twitter Part 1
+Submitted by: **Michael Lofton**<br>
 Time spent: **3.5** hours spent in total
 
 ## User Stories
@@ -43,11 +49,6 @@ Gifs created with [Licecap](https://www.cockos.com/licecap/)
 ## Notes
 
 Describe any challenges encountered while building the app.
-
-## Open-source libraries used
-
-- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
-- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
 
 ## License
 
