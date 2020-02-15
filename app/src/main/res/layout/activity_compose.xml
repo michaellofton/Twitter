@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         app:counterEnabled="true">
         <!-- minLines = 5 allows user to wrap their content over multiple lines-->
+        <!-- android:minLines="4"-->
         <EditText
             android:id="@+id/etCompose"
             android:layout_width="match_parent"
@@ -25,7 +26,8 @@
             android:gravity="start|top"
             android:hint="@string/what_s_happening"
             android:inputType="textMultiLine"
-            android:minLines="5" />
+            android:minLines="3"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
 
