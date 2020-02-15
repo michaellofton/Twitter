@@ -13,8 +13,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.RestApplication;
-import com.codepath.apps.restclienttemplate.RestClient;
+import com.codepath.apps.restclienttemplate.network.RestApplication;
+import com.codepath.apps.restclienttemplate.network.RestClient;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.google.android.material.textfield.TextInputLayout;

@@ -8,8 +8,8 @@ import android.view.Menu;
 import android.view.View;
 
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.RestApplication;
-import com.codepath.apps.restclienttemplate.RestClient;
+import com.codepath.apps.restclienttemplate.network.RestApplication;
+import com.codepath.apps.restclienttemplate.network.RestClient;
 import com.codepath.apps.restclienttemplate.models.SampleModel;
 import com.codepath.apps.restclienttemplate.models.SampleModelDao;
 import com.codepath.oauth.OAuthLoginActionBarActivity;
