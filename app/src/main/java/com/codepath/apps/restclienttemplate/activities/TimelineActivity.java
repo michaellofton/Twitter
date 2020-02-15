@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate.activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +20,11 @@ import com.codepath.apps.restclienttemplate.RestApplication;
 import com.codepath.apps.restclienttemplate.RestClient;
 import com.codepath.apps.restclienttemplate.adapters.TweetsAdapter;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.models.Tweet$$Parcelable;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONException;
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +33,8 @@ import okhttp3.Headers;
 
 public class TimelineActivity extends AppCompatActivity {
     private final String TAG = TimelineActivity.class.getSimpleName();
-    
+    private final int COMPOSE_REQUEST_CODE = 20;
+
     private RestClient client;
     private RecyclerView rvTweets;
     private List<Tweet> tweets;
@@ -109,10 +115,42 @@ public class TimelineActivity extends AppCompatActivity {
             // Compose menu item was clicked, Start compose activity
             //Coming from this activity to compose activity
             Intent intentComposeTweet = new Intent(this,ComposeActivity.class);
-            startActivity(intentComposeTweet);
+            //Return to this activity after setResult & finish called in child activity
+            startActivityForResult(intentComposeTweet, COMPOSE_REQUEST_CODE);
             return true; // consume the tap of the menu item HERE
         }
         return super.onOptionsItemSelected(item);
+    }
 
+    /**
+     * request code = should match the activity we launched.
+     * result code = whether the child activity has finished successfully;
+     * data = received from child activity
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "onActivityResult: Called, received request code: " + requestCode);
+
+        if (requestCode == COMPOSE_REQUEST_CODE && resultCode == RESULT_OK) {
+            if (data != null){
+                // Get Parcelable data from the intent
+                Parcelable p = data.getParcelableExtra("tweet");
+                // Convert parcelable back to tweet object
+                Tweet tweet = Parcels.unwrap(p);
+
+                // Update thee RecyclerView with this new tweet
+                //modify data source to include tweet
+                int position = 0; //first position to insert tweet into (top of timeline)
+                tweets.add(position, tweet);
+
+                //update the adapter
+                tweetsAdapter.notifyItemInserted(position);
+
+                //prevent user from manually scrolling up to see new tweet
+                rvTweets.smoothScrollToPosition(position);
+            }
+
+        }
     }
 }
