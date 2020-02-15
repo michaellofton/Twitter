@@ -43,11 +43,16 @@ The following **bonus** features are implemented:
 
 #### CUSTOM BONUS
 The following **additional** features are implemented:
-- [ ] List anything else that you can get done to improve the app functionality!
+* Features:
+  - [ ] Added a custom launcher icon created using [vectr.com](https://vectr.com/) and by following [this YouTube tutorial](https://www.youtube.com/watch?v=Q66P-HZwBnk)<br>
+    <img src="icon/twitter_icon_launcher.png" alt="App Icon" width="125" height="125"><br>
+* Structure & Best Practices:
+  - [X] Followed convention/best practices by organizing the codebase's packages into separate categories 
+* UI:
   - [ ] Changed the max lines a user can see when composing a new tweet so that the additional and unnecessary space isn't visible.
   - [ ] Changed toast messages to snackbar to let the user know if there's an error when trying to create their new tweet.
   - [ ] Customized snackbar's colors to fit Twitter theme.
-
+  
 ### Video Walkthrough
 Here's a walkthrough of implemented user stories:<br>
 ![Walkthrough](walkthrough/part2/walkthrough.gif)<br>
