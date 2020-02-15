@@ -9,7 +9,7 @@
 
 ## Twitter Part 2
 Submitted by: **Michael Lofton**<br>
-Time spent: **?** hours spent in total
+Time spent: **2** hours spent in total
 
 ### User Stories
 #### REQUIRED
