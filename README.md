@@ -9,7 +9,7 @@
 
 ## Twitter Part 2
 Submitted by: **Michael Lofton**<br>
-Time spent: **?** hours spent in total
+Time spent: **2** hours spent in total
 
 ### User Stories
 #### REQUIRED
@@ -49,7 +49,7 @@ The following **additional** features are implemented:
 * Structure & Best Practices:
   - [X] Followed convention/best practices by organizing the codebase's packages into separate categories 
 * UI:
-  - [ ] Changed the max lines a user can see when composing a new tweet so that the additional and unnecessary space isn't visible.
+  - [X] Changed the minimum lines a user can see when composing a new tweet so that the additional and unnecessary lines of space aren't visible.
   - [ ] Changed toast messages to snackbar to let the user know if there's an error when trying to create their new tweet.
   - [ ] Customized snackbar's colors to fit Twitter theme.
   
