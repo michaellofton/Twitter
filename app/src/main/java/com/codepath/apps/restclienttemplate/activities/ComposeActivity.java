@@ -63,22 +63,20 @@ public class ComposeActivity extends AppCompatActivity {
                 // Handle error
                 String tweetContent = etCompose.getText().toString();
                 if (tweetContent.length() < minTweetLen ) {
-                    Toast.makeText(getApplicationContext(),
-                            "Sorry, your tweet can't be empty.",
-                            Toast.LENGTH_LONG).show();
-                    return;
+                    displayErrorMessage("Sorry, your tweet can't be 0 characters");
                 }
                 else if (tweetContent.length() > maxTweetLen) {
-                    Toast.makeText(getApplicationContext(),
-                            "Sorry, your tweet is too long.",
-                            Toast.LENGTH_LONG).show();
-                    return;
+                    displayErrorMessage("Sorry, your tweet is too long.");
                 }
                 else {
                     publishTweet(tweetContent);
                 }
             }
         });
+    }
+
+    private void displayErrorMessage(String errorMsg) {
+        Toast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_LONG).show();
     }
 
     @Override
